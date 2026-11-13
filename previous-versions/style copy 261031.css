@@ -1,0 +1,1000 @@
+
+/* =====================================================
+   SAM × BRAN — SPRING GARDEN TATTOO ZINE
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Special+Elite&display=swap');
+
+:root {
+  --paper: #f4f0df;
+  --paper-dark: #e8e1c9;
+  --ink: #171713;
+  --green: #40583d;
+  --pink: #d96b72;
+  --red: #b52c35;
+  --yellow: #e4b94e;
+  --blue: #526b69;
+
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --mono: "DM Mono", monospace;
+  --typewriter: "Special Elite", monospace;
+}
+
+/* ---------- Reset ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--mono);
+  overflow-x: hidden;
+
+  /* subtle photocopied-paper feeling */
+  background-image:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(0, 0, 0, 0.025) 0 1px,
+      transparent 1px
+    );
+  background-size: 5px 5px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.site-header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  padding: 16px 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid var(--ink);
+  background: var(--paper);
+}
+
+.logo {
+  font-family: var(--typewriter);
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  text-transform: lowercase;
+}
+
+.logo span {
+  font-family: var(--serif);
+  font-size: 22px;
+}
+
+.nav {
+  display: flex;
+  gap: 22px;
+}
+
+.nav a {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+/* =====================================================
+   FLOATING COMIC / ZINE WORDS
+   ===================================================== */
+
+.hero-word {
+  position: absolute;
+  z-index: 3;
+
+  font-family: var(--typewriter);
+  font-size: clamp(12px, 1.5vw, 20px);
+  letter-spacing: 0.05em;
+  line-height: 1;
+
+  pointer-events: none;
+
+  /* makes them feel printed rather than digital */
+  padding: 7px 10px;
+
+  border: 1px solid var(--ink);
+  background: var(--paper);
+
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.hero-word-one {
+  top: 23%;
+  right: 12%;
+
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+
+  padding: 16px 12px;
+
+  color: var(--red);
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 700;
+
+  transform: rotate(-9deg);
+}
+
+.hero-word-two {
+  top: 30%;
+  right: 6%;
+
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+
+  padding: 16px 12px;
+
+  color: var(--red);
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 700;
+
+  transform: rotate(7deg);
+}
+
+.hero-word-three {
+  top: 37%;
+  right: 9%;
+
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+
+  padding: 16px 12px;
+
+  color: var(--red);
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 700;
+
+  transform: rotate(-11deg);
+}
+
+.hero-word-four {
+  top: 45;
+  right: 10%;
+
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+
+  padding: 16px 12px;
+
+  color: var(--red);
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 700;
+
+  transform: rotate(10deg);
+}
+
+
+/* =====================================================
+   SHARED
+   ===================================================== */
+
+.section-label {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+}
+
+.section-label::before {
+  content: "✳ ";
+  font-family: var(--serif);
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero {
+  min-height: 100vh;
+  padding: 120px 5vw 40px;
+
+  position: relative;
+  overflow: hidden;
+
+  border-bottom: 1px solid var(--ink);
+}
+
+/* ---------- HERO PHOTO ---------- */
+
+.hero img.hero-image {
+  display: block;
+  /*width: 280px;*/
+  max-width: 25%;
+  /*height: 220px;*/
+  object-fit: contain;
+  margin: 30px auto;
+  border: 5px solid white;
+  outline: 2px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--pink);
+  transform: rotate(-3deg);
+}
+
+/* little zine registration mark */
+.hero::before {
+  content: "+";
+  position: absolute;
+  top: 100px;
+  left: 50%;
+
+  font-family: var(--serif);
+  font-size: 22px;
+  transform: translateX(-50%);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1000px;
+  margin: 12vh auto 0;
+}
+
+.eyebrow {
+  display: inline-block;
+
+  margin: 0 0 38px;
+
+  padding: 5px 9px;
+
+  border: 1px solid var(--ink);
+
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+
+  transform: rotate(-1deg);
+}
+
+/*
+  The names used to be enormous.
+  This keeps them dramatic without swallowing the whole page.
+*/
+
+h1 {
+  margin: 0;
+
+  font-family: var(--serif);
+  font-size: clamp(72px, 12vw, 175px);
+  font-weight: 500;
+  line-height: 0.68;
+  letter-spacing: -0.055em;
+
+  max-width: 820px;
+}
+
+h1 span {
+  display: inline-block;
+
+  margin: 0 0.08em;
+
+  font-family: var(--typewriter);
+  font-size: 0.16em;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+
+  transform: rotate(-8deg);
+}
+
+.intro {
+  margin: 58px 0 0 8vw;
+
+  font-family: var(--typewriter);
+  font-size: clamp(32px, 4vw, 60px);
+  line-height: 0.9;
+
+  transform: rotate(-2deg);
+}
+
+
+/* =====================================================
+   HERO NUMBER
+   ===================================================== */
+
+.hero-number {
+  position: absolute;
+  left: 24px;
+  bottom: 42px;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: var(--mono);
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+}
+
+.hero-number span:first-child {
+  border-top: 1px solid var(--ink);
+  padding-top: 7px;
+}
+
+
+/* =====================================================
+   HERO DATE
+   ===================================================== */
+
+.hero-date {
+  position: absolute;
+  right: 24px;
+  bottom: 42px;
+
+  font-size: 9px;
+  line-height: 1.7;
+  text-align: right;
+  letter-spacing: 0.08em;
+}
+
+.hero-date p {
+  margin: 0;
+}
+
+
+/* =====================================================
+   SCROLL
+   ===================================================== */
+
+.scroll-link {
+  position: absolute;
+  right: 50%;
+  bottom: 20px;
+
+  transform: translateX(50%);
+
+  font-family: var(--typewriter);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.scroll-link:hover {
+  transform: translateX(50%) rotate(-3deg);
+}
+
+
+/* =====================================================
+   BOTANICAL FLASH ART
+   ===================================================== */
+
+.flower {
+  position: absolute;
+  z-index: 1;
+
+  pointer-events: none;
+
+  color: var(--green);
+}
+
+.flower svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.flower path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.flower circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.flower-one {
+  width: 280px;
+  height: 470px;
+
+  right: 4vw;
+  top: 15vh;
+
+  color: var(--green);
+
+  transform: rotate(8deg);
+}
+
+/* Add a second little flash-style flower using CSS */
+.hero::after {
+  content: "✿";
+
+  position: absolute;
+  right: 20vw;
+  bottom: 15vh;
+
+  color: var(--pink);
+
+  font-family: var(--serif);
+  font-size: 90px;
+
+  transform: rotate(-12deg);
+}
+
+
+/* =====================================================
+   STATEMENT
+   ===================================================== */
+
+.statement {
+  min-height: 80vh;
+  padding: 12vw 8vw;
+
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5vw;
+
+  border-bottom: 1px solid var(--ink);
+}
+
+/* decorative corner flower */
+.statement::after {
+  content: "❀";
+
+  position: absolute;
+  right: 5vw;
+  bottom: 4vw;
+
+  font-family: var(--serif);
+  font-size: 70px;
+  color: var(--pink);
+
+  transform: rotate(13deg);
+}
+
+.statement h2 {
+  margin: 0;
+
+  font-family: var(--serif);
+  font-size: clamp(65px, 8vw, 135px);
+  font-weight: 500;
+  line-height: 0.78;
+  letter-spacing: -0.045em;
+}
+
+.statement-copy {
+  max-width: 330px;
+  margin: 30px 0 0;
+
+  font-family: var(--typewriter);
+  font-size: 13px;
+  line-height: 1.7;
+
+  transform: rotate(1deg);
+}
+
+
+/* =====================================================
+   DETAILS / FLASH CARDS
+   ===================================================== */
+
+.info-grid {
+  padding: 90px 5vw;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  border-bottom: 1px solid var(--ink);
+}
+
+.info-card {
+  min-height: 320px;
+  padding: 26px;
+
+  position: relative;
+
+  border: 1px solid var(--ink);
+  border-right: 0;
+
+  background: var(--paper-dark);
+
+  transition: transform 180ms ease;
+}
+
+.info-card:last-child {
+  border-right: 1px solid var(--ink);
+}
+
+.info-card:nth-child(2) {
+  transform: rotate(-1.2deg);
+}
+
+.info-card:nth-child(3) {
+  transform: rotate(1deg);
+}
+
+.info-card:nth-child(4) {
+  transform: rotate(-0.5deg);
+}
+
+.info-card:hover {
+  transform: translateY(-7px) rotate(-1deg);
+}
+
+@media (max-width: 900px) {
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* little flash star */
+.info-card::after {
+  content: "✦";
+
+  position: absolute;
+  top: 18px;
+  right: 20px;
+
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--red);
+}
+
+.card-number {
+  margin: 0 0 75px;
+
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.info-card h3 {
+  margin: 0 0 15px;
+
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.info-card p:last-child {
+  max-width: 180px;
+
+  font-family: var(--serif);
+  font-size: 26px;
+  line-height: 0.95;
+}
+
+
+/* =====================================================
+   TRAVEL
+   ===================================================== */
+
+.travel {
+  min-height: 80vh;
+  padding: 100px 5vw;
+
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5vw;
+
+  border-bottom: 1px solid var(--ink);
+}
+
+/* giant botanical watermark */
+.travel::after {
+  content: "✽";
+
+  position: absolute;
+  right: 8vw;
+  bottom: 3vw;
+
+  font-family: var(--serif);
+  font-size: 180px;
+  line-height: 1;
+
+  color: var(--yellow);
+
+  opacity: 0.7;
+  transform: rotate(15deg);
+}
+
+.travel h2 {
+  margin: 0;
+
+  font-family: var(--serif);
+  font-size: clamp(65px, 10vw, 165px);
+  font-weight: 500;
+  line-height: 0.74;
+  letter-spacing: -0.05em;
+
+  position: relative;
+  z-index: 2;
+}
+
+.travel h2 em {
+  font-size: 0.47em;
+  font-style: normal;
+  color: var(--green);
+}
+
+.travel p {
+  max-width: 300px;
+  margin-top: 60px;
+
+  font-family: var(--typewriter);
+  font-size: 12px;
+  line-height: 1.7;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =====================================================
+   RSVP
+   ===================================================== */
+
+.rsvp {
+  min-height: 70vh;
+  padding: 100px 5vw;
+
+  position: relative;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5vw;
+
+  background: var(--green);
+  color: var(--paper);
+}
+
+/* decorative flower/heart */
+.rsvp::after {
+  content: "♥";
+
+  position: absolute;
+  right: 4vw;
+  top: 5vw;
+
+  font-family: var(--serif);
+  font-size: 160px;
+
+  color: var(--pink);
+
+  transform: rotate(12deg);
+}
+
+.rsvp-box {
+  position: relative;
+  z-index: 2;
+}
+
+.rsvp-box h2 {
+  margin: 0;
+
+  font-family: var(--serif);
+  font-size: clamp(75px, 12vw, 190px);
+  font-weight: 500;
+  line-height: 0.7;
+  letter-spacing: -0.055em;
+}
+
+.rsvp button {
+  margin-top: 70px;
+  padding: 15px 26px;
+
+  border: 1px solid var(--paper);
+  border-radius: 0;
+
+  background: var(--pink);
+  color: var(--ink);
+
+  cursor: pointer;
+
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+
+  transform: rotate(-2deg);
+
+  transition:
+    transform 150ms ease,
+    background 150ms ease;
+}
+
+.rsvp button:hover {
+  background: var(--yellow);
+  transform: rotate(2deg) translateY(-3px);
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+  padding: 18px 24px;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+footer p {
+  margin: 0;
+}
+
+
+/* =====================================================
+   SMALL ZINE DETAILS
+   ===================================================== */
+
+/* hand-drawn-looking horizontal rule effect */
+.statement,
+.info-grid,
+.travel {
+  position: relative;
+}
+
+.statement::before,
+.travel::before {
+  content: "SPRING / 2027";
+
+  position: absolute;
+  top: 20px;
+  right: 24px;
+
+  font-family: var(--mono);
+  font-size: 7px;
+  letter-spacing: 0.15em;
+
+  opacity: 0.65;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+  .site-header {
+    padding: 14px 15px;
+  }
+
+  .logo {
+    font-size: 11px;
+  }
+
+  .nav {
+    gap: 9px;
+  }
+
+  .nav a {
+    font-size: 7px;
+  }
+
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    min-height: 92vh;
+    padding: 105px 20px 30px;
+  }
+
+  .hero-copy {
+    margin-top: 9vh;
+  }
+
+  .eyebrow {
+    max-width: 235px;
+    margin-bottom: 32px;
+
+    line-height: 1.5;
+  }
+
+  /*
+    Deliberately much smaller than the original 27vw.
+  */
+  h1 {
+    font-size: 19vw;
+    line-height: 0.72;
+    max-width: 90vw;
+  }
+
+  h1 span {
+    font-size: 0.18em;
+  }
+
+  .intro {
+    margin: 45px 0 0 3vw;
+    font-size: 42px;
+  }
+
+  .flower-one {
+    width: 170px;
+    height: 300px;
+
+    right: -35px;
+    top: 38vh;
+
+    opacity: 0.75;
+  }
+
+  .hero::after {
+    right: 18vw;
+    bottom: 18vh;
+    font-size: 60px;
+  }
+
+  .hero-number {
+    left: 15px;
+    bottom: 30px;
+  }
+
+  .hero-date {
+    right: 15px;
+    bottom: 30px;
+  }
+
+
+  /* ---------- Statement ---------- */
+
+  .statement,
+  .travel,
+  .rsvp {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .statement {
+    min-height: auto;
+    padding: 100px 20px;
+  }
+
+  .statement h2 {
+    font-size: 70px;
+  }
+
+  .statement-copy {
+    margin-top: 10px;
+  }
+
+  .statement::after {
+    font-size: 50px;
+    right: 8vw;
+    bottom: 5vw;
+  }
+
+
+  /* ---------- Details ---------- */
+
+  .info-grid {
+    padding: 75px 20px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .info-card {
+    min-height: 250px;
+    padding: 24px;
+
+    border: 1px solid var(--ink);
+  }
+
+  .info-card:nth-child(2),
+  .info-card:nth-child(3),
+  .info-card:nth-child(4) {
+    transform: none;
+  }
+
+  .info-card:nth-child(2) {
+    transform: rotate(-1deg);
+  }
+
+  .info-card:nth-child(3) {
+    transform: rotate(1deg);
+  }
+
+  .info-card:nth-child(4) {
+    transform: rotate(-0.7deg);
+  }
+
+  .card-number {
+    margin-bottom: 55px;
+  }
+
+
+  /* ---------- Travel ---------- */
+
+  .travel {
+    min-height: auto;
+    padding: 100px 20px;
+  }
+
+  .travel h2 {
+    font-size: 78px;
+  }
+
+  .travel p {
+    margin-top: 45px;
+  }
+
+  .travel::after {
+    font-size: 110px;
+    right: 3vw;
+    bottom: 4vw;
+  }
+
+
+  /* ---------- RSVP ---------- */
+
+  .rsvp {
+    min-height: auto;
+    padding: 100px 20px 120px;
+  }
+
+  .rsvp-box h2 {
+    font-size: 95px;
+  }
+
+  .rsvp button {
+    margin-top: 55px;
+  }
+
+  .rsvp::after {
+    font-size: 100px;
+    right: 2vw;
+    top: 18vw;
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    padding: 15px;
+    gap: 10px;
+    font-size: 7px;
+  }
+}
